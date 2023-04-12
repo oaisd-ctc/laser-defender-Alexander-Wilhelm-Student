@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3919565645982246635}
   - component: {fileID: 5094816460434732546}
-  m_Layer: 0
-  m_Name: playerShip1_blue
+  m_Layer: 7
+  m_Name: fart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8a8f5aa8dab3f4b4a94613704db342d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: d063482444ee8bf488372f6af244283c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -95,9 +95,13 @@ GameObject:
   - component: {fileID: 9206049328932275005}
   - component: {fileID: 1704093265}
   - component: {fileID: 1704093266}
-  m_Layer: 0
+  - component: {fileID: 7335205290178532049}
+  - component: {fileID: -2740679771718526276}
+  - component: {fileID: 4598835021489422914}
+  - component: {fileID: 7411223427110950862}
+  m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,3 +169,77 @@ MonoBehaviour:
   padRight: 0
   padTop: 6.5
   padBottom: 2
+--- !u!50 &7335205290178532049
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206049328932274979}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &-2740679771718526276
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206049328932274979}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4
+--- !u!114 &4598835021489422914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206049328932274979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d73ca2253af1bb4db27790749f68958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  flashLength: 0.05
+  deathEffect: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: ffbe4402a37898d469554e2a7c70688e, type: 3}
+  deathSound: {fileID: 8300000, guid: a540e078963b0a844952cce1edadb9c5, type: 3}
+  hitShakeAmount: 0.1
+  deathShakeAmount: 1
+  ShakeDecay: 0.01
+--- !u!114 &7411223427110950862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206049328932274979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89306bfdc031a3b4fab61b06d50df8ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5663616549154556513, guid: 693e1c8e2b060b943935bfd29bdae1b9, type: 3}
+  fireRate: 0.1
+  offset: {x: 0, y: 0.3, z: 0}
+  shootSound: {fileID: 8300000, guid: f5a4398a0fe43a2448d8d7f27edca788, type: 3}
+  shooting: 0

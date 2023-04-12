@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 1752247155441750802}
   - component: {fileID: 781067055}
   - component: {fileID: 9073636196362290814}
-  - component: {fileID: 7678206643249992236}
-  - component: {fileID: 5658826320544453355}
-  - component: {fileID: 426778197952256874}
-  - component: {fileID: -5139783244198504585}
+  - component: {fileID: 202926956997168581}
+  - component: {fileID: 566907375428654460}
+  - component: {fileID: 5481867819907285255}
+  - component: {fileID: -8120601013705679754}
   m_Layer: 6
-  m_Name: Enemy 0
+  m_Name: Enemy 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wave: {fileID: 0}
-  movementMode: 0
-  magnetWaypointRadius: 0
+  movementMode: 1
+  magnetWaypointRadius: 0.2
 --- !u!50 &9073636196362290814
 Rigidbody2D:
   serializedVersion: 4
@@ -66,7 +66,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -74,7 +74,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &7678206643249992236
+--- !u!60 &202926956997168581
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,7 +103,7 @@ PolygonCollider2D:
       - {x: -0.3, y: -0.25}
       - {x: 0.3, y: -0.25}
       - {x: 0.5, y: 0.4}
---- !u!114 &5658826320544453355
+--- !u!114 &566907375428654460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   destroyOnHit: 0
---- !u!114 &426778197952256874
+--- !u!114 &5481867819907285255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   hitSound: {fileID: 8300000, guid: 6c805ee1a99fe5344be2669875d79774, type: 3}
   deathSound: {fileID: 8300000, guid: 43a12bd12e0a6cd4f853ef77ca0e9986, type: 3}
---- !u!114 &-5139783244198504585
+--- !u!114 &-8120601013705679754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

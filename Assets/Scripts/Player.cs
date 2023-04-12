@@ -15,10 +15,12 @@ public class Player : MonoBehaviour
     [SerializeField] float padTop;
     [SerializeField] float padBottom;
     
+    PlayerShoot shooter;
     float dt;
 
     void Start(){
         InitBounds();
+        shooter = GetComponent<PlayerShoot>();
     }
     // Update is called once per frame
     void Update()
@@ -48,5 +50,11 @@ public class Player : MonoBehaviour
     {
         moveInput = value.Get<Vector2>();
         //Debug.Log(moveInput);
+    }
+
+    void OnFire(InputValue value) {
+        if (shooter != null) shooter.shooting = value.isPressed;
+
+        Debug.Log(value.isPressed);
     }
 }
