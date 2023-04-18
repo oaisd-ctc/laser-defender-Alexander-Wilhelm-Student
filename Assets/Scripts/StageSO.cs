@@ -8,6 +8,10 @@ public class StageSO : ScriptableObject
     [SerializeField] string stageName;
 
     [SerializeField] List<WaveSO> waves;
+
+    [SerializeField] AudioClip introMusic;
+    [SerializeField] AudioClip loopMusic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,14 @@ public class StageSO : ScriptableObject
 
     public List<WaveSO> GetWaves() {
         return waves;
+    }
+
+    public AudioClip GetIntroMusic() {
+        return introMusic;
+    }
+
+    public AudioClip GetLoopMusic() {
+        return loopMusic;
     }
 
 }

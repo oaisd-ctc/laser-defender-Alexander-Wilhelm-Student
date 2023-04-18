@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     // big chungus
     [SerializeField] int health = 50;
+    [SerializeField] int scoreValue = 50;
     [SerializeField] float flashLength = 0.025f;
 
     [SerializeField] GameObject deathEffect;
@@ -20,6 +21,8 @@ public class Health : MonoBehaviour
     [SerializeField] float hitShakeAmount;
     [SerializeField] float deathShakeAmount;
     [SerializeField] float ShakeDecay;
+
+    
     void Start()
     {
         flash = GetComponentInChildren<SpriteRenderer>().material;
@@ -50,6 +53,7 @@ public class Health : MonoBehaviour
         if (deathEffect != null) Instantiate(deathEffect, transform.position, Quaternion.identity);
         if (deathSound != null) AudioSource.PlayClipAtPoint(deathSound, transform.position);
         shake.setShake(deathShakeAmount, ShakeDecay);
+        FindObjectOfType<GameManager>().score += scoreValue;
         Destroy(gameObject);
     }
 

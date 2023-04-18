@@ -18,6 +18,8 @@ public class Pathfinder : MonoBehaviour
 
     Rigidbody2D rb;
 
+    [SerializeField] bool destroyAtEnd = true;
+
     [SerializeField] float magnetWaypointRadius;
 
     void Awake()
@@ -43,20 +45,23 @@ public class Pathfinder : MonoBehaviour
 
     void FollowPath()
     {
+        Move();
+        if (!(wpIndex < waypoints.Count) && destroyAtEnd) Destroy(gameObject);
+
+    }
+
+    void Move() {
         Vector3 targetPos;
         Vector2 targetDir;
         float delta; 
         float waypointRadius;
-        if (wpIndex < waypoints.Count)
-        {
-
-            switch (movementMode)
+        switch (movementMode)
             {
                 case movemode.simple:
                     targetPos = waypoints[wpIndex].position;
                     delta = wave.GetMoveSpeed() * Time.deltaTime;
                     transform.position = Vector2.MoveTowards(transform.position, targetPos, delta);
-                    if (transform.position == targetPos)
+                    if ((transform.position == targetPos) &! (wpIndex == waypoints.Count-1 && !destroyAtEnd))
                     {
                         wpIndex++;
                     }
@@ -67,14 +72,9 @@ public class Pathfinder : MonoBehaviour
                     targetDir = (transform.position - targetPos).normalized;
                     rb.AddForce(-targetDir * wave.GetMoveSpeed());
                     if (wave.GetUseEnemyRadius()) waypointRadius = magnetWaypointRadius; else waypointRadius = wave.GetWaypointRadius();
-                    if (Vector2.Distance(transform.position, targetPos) <= waypointRadius) wpIndex++;
+                    if (Vector2.Distance(transform.position, targetPos) <= waypointRadius &! (wpIndex == waypoints.Count-1 && !destroyAtEnd)) wpIndex++;
                     break;
             }
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
 
 }

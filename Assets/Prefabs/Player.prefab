@@ -218,7 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d73ca2253af1bb4db27790749f68958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 500
+  scoreValue: 50
   flashLength: 0.05
   deathEffect: {fileID: 0}
   hitSound: {fileID: 8300000, guid: ffbe4402a37898d469554e2a7c70688e, type: 3}
