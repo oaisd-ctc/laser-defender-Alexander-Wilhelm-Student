@@ -44,8 +44,6 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int j = 0; j < wave.GetEnemyCount(); j++)
         {
-            Debug.Log(wave.GetEnemyCount());
-            Debug.Log($"{wave.name} + {wave.GetStartWaypoint().position}");
             GameObject enemy = Instantiate(wave.GetEnemyPrefab(j),
                         wave.GetStartWaypoint().position,
                         Quaternion.identity,

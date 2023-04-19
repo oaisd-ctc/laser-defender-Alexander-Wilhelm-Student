@@ -221,7 +221,7 @@ MonoBehaviour:
   health: 500
   scoreValue: 50
   flashLength: 0.05
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 6557589332280452197, guid: dc1555244f90ffc45ae558a7b6d92899, type: 3}
   hitSound: {fileID: 8300000, guid: ffbe4402a37898d469554e2a7c70688e, type: 3}
   deathSound: {fileID: 8300000, guid: a540e078963b0a844952cce1edadb9c5, type: 3}
   hitShakeAmount: 0.1
