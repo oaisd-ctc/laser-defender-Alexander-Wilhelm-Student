@@ -136,7 +136,7 @@ MonoBehaviour:
   health: 750
   scoreValue: 2500
   flashLength: 0.025
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 6557589332280452197, guid: dc1555244f90ffc45ae558a7b6d92899, type: 3}
   hitSound: {fileID: 8300000, guid: 6c805ee1a99fe5344be2669875d79774, type: 3}
   deathSound: {fileID: 8300000, guid: 43a12bd12e0a6cd4f853ef77ca0e9986, type: 3}
   hitShakeAmount: 0
@@ -165,8 +165,8 @@ MonoBehaviour:
   randomSpread: 0
   shootCount: 1
   burstCount: 7
-  burstRate: 0.05
-  burstDelay: 2.5
+  burstRate: 0.07
+  burstDelay: 2.7
 --- !u!114 &-2119013242209194027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   shootTrigger: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 127c85c81fb598143a3d48402441d940, type: 3}
   projectilePrefab: {fileID: 5663616549154556513, guid: 14c28babf6a6ccd4c999cbfe64d2004e, type: 3}
-  fireRate: 0.3
+  fireRate: 0.45
   fireRateVariance: 0.3
   offset: {x: 0, y: -0.4, z: 0}
   aimAtPlayer: 0

@@ -133,7 +133,7 @@ MonoBehaviour:
   health: 100
   scoreValue: 500
   flashLength: 0.025
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 6557589332280452197, guid: a7798d75943667b4189e936b87d9a2ba, type: 3}
   hitSound: {fileID: 8300000, guid: 6c805ee1a99fe5344be2669875d79774, type: 3}
   deathSound: {fileID: 8300000, guid: 43a12bd12e0a6cd4f853ef77ca0e9986, type: 3}
   hitShakeAmount: 0

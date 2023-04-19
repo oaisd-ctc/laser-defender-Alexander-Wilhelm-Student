@@ -23,7 +23,7 @@ public class CameraShake : MonoBehaviour
     }
 
     public void setShake(float shake, float decay) {
-        if (decay >= shakeDecay || shakeAmount < Mathf.Epsilon) shakeDecay = decay;
+        if (decay >= shakeDecay || shakeAmount < Mathf.Epsilon) shakeDecay = decay; //dont remember why i checked shakeamount here but im sure its helpful yessir
         if (shake >= shakeAmount) shakeAmount = shake;
     }
 }
