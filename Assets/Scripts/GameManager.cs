@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; //no im not making a separate script for stage ui lol
 
 public class GameManager : MonoBehaviour
 {
@@ -9,20 +10,29 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float musicFadeFactor;
 
-    [SerializeField] float stageDelay;
+    [SerializeField] float stageStartDelay;
+    [SerializeField] float stageEndDelay;
+    [SerializeField] float fadeSpeed;
+
+    [SerializeField] TextMeshProUGUI stageStartText;
+    [SerializeField] TextMeshProUGUI stageEndText;
 
     EnemySpawner enemySpawner;
 
     GameObject music;
+    GameObject player;
     AudioSource musicSrc;
     float defaultMusicVol;
 
     public int score;
 
+    public bool stagePlaying;
+
     // Start is called before the first frame update
     void Start()
     {
         enemySpawner = FindObjectOfType<EnemySpawner>();
+        player = FindObjectOfType<Player>().gameObject;
         music = FindObjectOfType<MusicLoop>().gameObject;
         musicSrc = music.GetComponent<AudioSource>();
         defaultMusicVol = musicSrc.volume;
@@ -34,12 +44,21 @@ public class GameManager : MonoBehaviour
     {
         foreach (StageSO stage in stageList)
         {
+            stageStartText.text = stage.GetStageName();
+            yield return new WaitForSeconds(stageStartDelay);
+            StartCoroutine(FadeText(stageStartText, fadeSpeed));
             NextStage(stage);
+            stagePlaying = true;
             do { yield return null; }
             while (enemySpawner.spawningEnemies || GameObject.FindGameObjectsWithTag("Enemy").Length > 0);
+            stagePlaying = false;
+            StartCoroutine(FadeText(stageEndText, fadeSpeed/3));
             StartCoroutine(FadeMusic());
-            yield return new WaitForSeconds(stageDelay);
+            yield return new WaitForSeconds(stageEndDelay);
+            
         }
+
+        
 
     }
 
@@ -63,6 +82,21 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         musicSrc.Stop();
-        StopCoroutine(FadeMusic());
+    }
+
+    public IEnumerator FadeText(TextMeshProUGUI text, float fadeFactor) {
+        
+        text.color = new Color(text.color.r, text.color.g, text.color.b, 1);
+        Debug.Log($"{text.color.r} {text.color.g} {text.color.b} {text.color.a}");
+        while (text.color.a >= Mathf.Epsilon)
+        {
+            text.color = new Color(text.color.r, text.color.g, text.color.b, (text.color.a - (fadeFactor*Time.deltaTime))); //INSANE!!!! WHY AM I DOING THIS
+            yield return null;
+        }
+        
+    }
+
+    public void StopGame() {
+        StopCoroutine(HandleStages());
     }
 }

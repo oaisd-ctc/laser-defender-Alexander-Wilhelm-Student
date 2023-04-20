@@ -134,14 +134,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 750
+  player: 0
   scoreValue: 2500
   flashLength: 0.025
   deathEffect: {fileID: 6557589332280452197, guid: dc1555244f90ffc45ae558a7b6d92899, type: 3}
   hitSound: {fileID: 8300000, guid: 6c805ee1a99fe5344be2669875d79774, type: 3}
-  deathSound: {fileID: 8300000, guid: 43a12bd12e0a6cd4f853ef77ca0e9986, type: 3}
+  deathSound: {fileID: 8300000, guid: f77de7675e99e1748b089c59e9aea3be, type: 3}
   hitShakeAmount: 0
-  deathShakeAmount: 0.4
-  ShakeDecay: 0.4
+  deathShakeAmount: 0.8
+  ShakeDecay: 0.01
 --- !u!114 &-8120601013705679754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +166,7 @@ MonoBehaviour:
   randomSpread: 0
   shootCount: 1
   burstCount: 7
-  burstRate: 0.07
+  burstRate: 0.8
   burstDelay: 2.7
 --- !u!114 &-2119013242209194027
 MonoBehaviour:

@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     // big chungus
     [SerializeField] int health = 50;
+    [SerializeField] bool player;
     [SerializeField] int scoreValue = 50;
     [SerializeField] float flashLength = 0.025f;
 
@@ -59,6 +60,7 @@ public class Health : MonoBehaviour
 
     void TakeDamage(int damage)
     {
+        if (!player || FindObjectOfType<GameManager>().stagePlaying)
         health -= damage;
         flashTimer = flashLength;
         if (hitSound != null) AudioSource.PlayClipAtPoint(hitSound, transform.position);
@@ -67,6 +69,10 @@ public class Health : MonoBehaviour
         {
             DeathStuff();
         }
+    }
+
+    public int GetHealth() {
+        return health;
     }
 
 

@@ -139,12 +139,12 @@ MonoBehaviour:
   health: 100
   scoreValue: 250
   flashLength: 0.025
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 6557589332280452197, guid: 4d1c04640b7e5064a9d47d7c86ccd6eb, type: 3}
   hitSound: {fileID: 8300000, guid: 6c805ee1a99fe5344be2669875d79774, type: 3}
   deathSound: {fileID: 8300000, guid: 43a12bd12e0a6cd4f853ef77ca0e9986, type: 3}
   hitShakeAmount: 0
   deathShakeAmount: 0.4
-  ShakeDecay: 0.4
+  ShakeDecay: 0.015
 --- !u!114 &-8120601013705679754
 MonoBehaviour:
   m_ObjectHideFlags: 0
