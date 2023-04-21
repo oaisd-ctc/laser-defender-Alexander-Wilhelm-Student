@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d96437ffe01aacc4abb7740a088bba44, type: 3}
-  m_Name: Wave 0
+  m_Name: XWave1
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 1752247155441750801, guid: ccfa0572c1671f944980011cd870f851, type: 3}
-  - {fileID: 1752247155441750801, guid: ccfa0572c1671f944980011cd870f851, type: 3}
-  pathPrefab: {fileID: 5397020453861119357, guid: 8cfa77edea585a943b38c087bbcc2626, type: 3}
-  moveSpeed: 5
+  - {fileID: 1752247155441750801, guid: 530f488fb6580934b81e809712a9ce17, type: 3}
+  pathPrefab: {fileID: 5397020453861119357, guid: a0c5e161358c6d24daa33669a9a658c2, type: 3}
+  moveSpeed: 40
   spawnInterval: 1
   spawnIntervalVariance: 0
   minSpawnInterval: 0.2
   waveDuration: 2
-  waitToSpawn: 0
+  waitToSpawn: 1
   waypointRadius: 0.2
   useEnemyRadius: 0

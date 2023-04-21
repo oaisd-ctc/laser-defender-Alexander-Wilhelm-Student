@@ -12,8 +12,11 @@ public class Health : MonoBehaviour
 
     [SerializeField] GameObject deathEffect;
 
+    AudioPlayer audioPlayer;
     [SerializeField] AudioClip hitSound;
+    [SerializeField] float hitVolume = 1;
     [SerializeField] AudioClip deathSound;
+    [SerializeField] float deathVolume = 1;
     float flashTimer;
     Material flash;
 
@@ -26,6 +29,7 @@ public class Health : MonoBehaviour
     
     void Start()
     {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
         flash = GetComponentInChildren<SpriteRenderer>().material;
         shake = FindObjectOfType<CameraShake>();
     }
@@ -52,7 +56,7 @@ public class Health : MonoBehaviour
     void DeathStuff()
     {
         if (deathEffect != null) Instantiate(deathEffect, transform.position, Quaternion.identity);
-        if (deathSound != null) AudioSource.PlayClipAtPoint(deathSound, transform.position);
+        if (deathSound != null) audioPlayer.PlayClip(deathSound, deathVolume);
         shake.setShake(deathShakeAmount, ShakeDecay);
         FindObjectOfType<GameManager>().score += scoreValue;
         Destroy(gameObject);
@@ -63,7 +67,7 @@ public class Health : MonoBehaviour
         if (!player || FindObjectOfType<GameManager>().stagePlaying)
         health -= damage;
         flashTimer = flashLength;
-        if (hitSound != null) AudioSource.PlayClipAtPoint(hitSound, transform.position);
+        if (hitSound != null) audioPlayer.PlayClip(hitSound, hitVolume);
         shake.setShake(hitShakeAmount, ShakeDecay);
         if (health <= 0)
         {

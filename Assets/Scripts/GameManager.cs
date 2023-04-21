@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float stageStartDelay;
     [SerializeField] float stageEndDelay;
+    [SerializeField] float fadeHold;
     [SerializeField] float fadeSpeed;
 
     [SerializeField] TextMeshProUGUI stageStartText;
@@ -87,6 +88,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator FadeText(TextMeshProUGUI text, float fadeFactor) {
         
         text.color = new Color(text.color.r, text.color.g, text.color.b, 1);
+        yield return new WaitForSeconds(fadeHold);
         Debug.Log($"{text.color.r} {text.color.g} {text.color.b} {text.color.a}");
         while (text.color.a >= Mathf.Epsilon)
         {

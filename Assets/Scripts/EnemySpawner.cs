@@ -48,7 +48,8 @@ public class EnemySpawner : MonoBehaviour
                         wave.GetStartWaypoint().position,
                         Quaternion.identity,
                         transform);
-            enemy.GetComponent<Pathfinder>().wave = wave;
+            if (enemy.GetComponent<Pathfinder>() != null) enemy.GetComponent<Pathfinder>().wave = wave;
+            if (enemy.GetComponent<HoverOverPlayer>() != null) enemy.GetComponent<HoverOverPlayer>().moveSpeed = wave.GetMoveSpeed();
             yield return new WaitForSeconds(wave.GetRandomSpawnInterval());
         }
     }

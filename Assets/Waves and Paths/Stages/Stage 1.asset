@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93aba325c28d20d42a2d80f9286221c2, type: 3}
   m_Name: Stage 1
   m_EditorClassIdentifier: 
-  stageName: lole
+  stageName: Stage 1
   waves:
   - {fileID: 11400000, guid: b3f71cff97a167347a63a1a5a76a1f5b, type: 2}
   - {fileID: 11400000, guid: 382f8a9aab83fd544b81dc648098809f, type: 2}
   - {fileID: 11400000, guid: 7623b90585ba4d54ea159b2c1e8e7cfb, type: 2}
   - {fileID: 11400000, guid: d08e0522b88e51c4d8f736735bdd84ae, type: 2}
+  - {fileID: 11400000, guid: a016f26fc37cfcf4a962d97d865b021a, type: 2}
+  - {fileID: 11400000, guid: ddac0b710f7346f45acc69891efa3985, type: 2}
+  - {fileID: 11400000, guid: 05a1e0f8d23b0b141b95fa5a26008027, type: 2}
+  - {fileID: 11400000, guid: a7c5c057738b9f348968822d768d4226, type: 2}
   introMusic: {fileID: 8300000, guid: f1450483240e55044ad28c9c5ec63053, type: 3}
   loopMusic: {fileID: 8300000, guid: 290da20576b828042947d1359ff847b4, type: 3}

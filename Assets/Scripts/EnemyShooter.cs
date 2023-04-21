@@ -8,7 +8,10 @@ public class EnemyShooter : MonoBehaviour
 
     [SerializeField] bool alwaysShoot;
     [SerializeField] Collider2D shootTrigger;
+
+    AudioPlayer audioPlayer;
     [SerializeField] AudioClip shootSound;
+    [SerializeField] float shootVolume = 1;
 
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float fireRate;
@@ -28,6 +31,7 @@ public class EnemyShooter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
         player = FindObjectOfType<Player>().gameObject;
         StartCoroutine(FireStuff());
     }
@@ -52,7 +56,7 @@ public class EnemyShooter : MonoBehaviour
                             Vector3 dir = player.transform.position - transform.position;
                             dir = player.transform.InverseTransformDirection(dir);
                             rot = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
-                            Debug.Log(rot);
+                            //Debug.Log(rot);
                         }
                         else rot = transform.rotation.eulerAngles.z + 180;
                         rot += Random.Range(-randomSpread, randomSpread);
@@ -61,7 +65,7 @@ public class EnemyShooter : MonoBehaviour
 
                         Instantiate(projectilePrefab, transform.position + offset, finalAngle);
                     }
-                    AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                    audioPlayer.PlayClip(shootSound, shootVolume);
                     yield return new WaitForSeconds(fireRate + Random.Range(0, fireRateVariance));
                 }
                 else yield return null;

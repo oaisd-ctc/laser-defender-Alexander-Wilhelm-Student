@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5481867819907285255}
   - component: {fileID: -8120601013705679754}
   m_Layer: 6
-  m_Name: Enemy 1
+  m_Name: Enemy 3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,16 +100,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.8, y: 0.15}
-      - {x: -0.95, y: -0.8}
-      - {x: -0.4, y: -1.5}
-      - {x: 0.4, y: -1.5}
-      - {x: 0.95, y: -0.8}
-      - {x: 0.8, y: 0.15}
-      - {x: 0.35, y: 0.25}
-      - {x: 0.35, y: 1.5}
-      - {x: -0.35, y: 1.5}
-      - {x: -0.35, y: 0.25}
+    - - {x: -0.5, y: 0.4}
+      - {x: -0.3, y: -0.25}
+      - {x: 0.3, y: -0.25}
+      - {x: 0.5, y: 0.4}
 --- !u!114 &566907375428654460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,18 +130,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d73ca2253af1bb4db27790749f68958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 50
   player: 0
-  scoreValue: 250
+  scoreValue: 50
   flashLength: 0.025
-  deathEffect: {fileID: 6557589332280452197, guid: 4d1c04640b7e5064a9d47d7c86ccd6eb, type: 3}
+  deathEffect: {fileID: 6557589332280452197, guid: a7798d75943667b4189e936b87d9a2ba, type: 3}
   hitSound: {fileID: 8300000, guid: 6c805ee1a99fe5344be2669875d79774, type: 3}
   hitVolume: 1
-  deathSound: {fileID: 8300000, guid: f77de7675e99e1748b089c59e9aea3be, type: 3}
+  deathSound: {fileID: 8300000, guid: 43a12bd12e0a6cd4f853ef77ca0e9986, type: 3}
   deathVolume: 1
   hitShakeAmount: 0
-  deathShakeAmount: 0.4
-  ShakeDecay: 0.015
+  deathShakeAmount: 0
+  ShakeDecay: 0
 --- !u!114 &-8120601013705679754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,18 +156,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alwaysShoot: 1
   shootTrigger: {fileID: 0}
-  shootSound: {fileID: 8300000, guid: 127c85c81fb598143a3d48402441d940, type: 3}
-  shootVolume: 1
+  shootSound: {fileID: 8300000, guid: 43453efa48cbc8b49bd19407246640a2, type: 3}
+  shootVolume: 0.7
   projectilePrefab: {fileID: 5663616549154556513, guid: 14c28babf6a6ccd4c999cbfe64d2004e, type: 3}
-  fireRate: 0.5
-  fireRateVariance: 0
+  fireRate: 0.32
+  fireRateVariance: 0.4
   offset: {x: 0, y: -0.4, z: 0}
-  aimAtPlayer: 1
-  randomSpread: 0
-  shootCount: 1
+  aimAtPlayer: 0
+  randomSpread: 15
+  shootCount: 3
   burstCount: 3
-  burstRate: 0.15
-  burstDelay: 0.6
+  burstRate: 0.4
+  burstDelay: 1
 --- !u!1 &1752247156362379883
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +241,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c30c5d0a47b679049bab5585558bf028, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06f84e6c12066434baebefefc59241e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

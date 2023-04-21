@@ -131,11 +131,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
+  player: 0
   scoreValue: 50
   flashLength: 0.025
   deathEffect: {fileID: 6557589332280452197, guid: a7798d75943667b4189e936b87d9a2ba, type: 3}
   hitSound: {fileID: 8300000, guid: 6c805ee1a99fe5344be2669875d79774, type: 3}
+  hitVolume: 1
   deathSound: {fileID: 8300000, guid: 43a12bd12e0a6cd4f853ef77ca0e9986, type: 3}
+  deathVolume: 1
   hitShakeAmount: 0
   deathShakeAmount: 0
   ShakeDecay: 0
@@ -154,9 +157,10 @@ MonoBehaviour:
   alwaysShoot: 1
   shootTrigger: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 127c85c81fb598143a3d48402441d940, type: 3}
+  shootVolume: 1
   projectilePrefab: {fileID: 5663616549154556513, guid: 14c28babf6a6ccd4c999cbfe64d2004e, type: 3}
-  fireRate: 0.2
-  fireRateVariance: 0.4
+  fireRate: 0.4
+  fireRateVariance: 0.8
   offset: {x: 0, y: -0.4, z: 0}
   aimAtPlayer: 0
   randomSpread: 0

@@ -11,10 +11,12 @@ public class PlayerShoot : MonoBehaviour
     float fireDelay;
     public bool shooting;
 
+    AudioPlayer audioPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
 
     // Update is called once per frame
@@ -28,7 +30,7 @@ public class PlayerShoot : MonoBehaviour
         if (shooting && fireDelay < 0) {            // WHY WOULD YOU MAKE THIS A COROUTINE?????
             Instantiate(projectilePrefab, transform.position+offset, transform.rotation);  //WHY WOULD YOU HANDLE PROJECTILE MOVEMENT LOGIC FROM THE FUCKING SHOOT SCRIPT???
             fireDelay = fireRate;                   // MAKE ANOTHER CLASS FOR THE PROJECTILE!!!!!!!!!
-            AudioSource.PlayClipAtPoint(shootSound, transform.position);
+            audioPlayer.PlayClip(shootSound, 1);
         } 
     }
 
