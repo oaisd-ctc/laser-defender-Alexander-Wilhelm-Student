@@ -56,7 +56,8 @@ public class HoverOverPlayer : MonoBehaviour
         Vector3 targetPos;
         Vector2 targetDir;
 
-        firstPos = player.transform.position + offset;
+        if (player!=null) firstPos = player.transform.position + offset;
+        else firstPos = offset;
 
         targetPos = firstPos + randomOffset;
 

@@ -18,7 +18,8 @@ public class UIScript : MonoBehaviour
 
     [SerializeField] float badHealthValue;
 
-    GameManager gameManager;
+    //GameManager gameManager;   might need this later??
+    ScoreKeeper scoreKeeper;
     GameObject player;
 
     int score;
@@ -30,7 +31,8 @@ public class UIScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        //gameManager = FindObjectOfType<GameManager>();
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
         player = FindObjectOfType<Player>().gameObject;
         maxhealth = player.GetComponent<Health>().GetHealth();
     }
@@ -38,8 +40,7 @@ public class UIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score = gameManager.score;
-        if (score > 9999999) score = 9999999; //prevent score ui from looking funky
+        score = scoreKeeper.GetScore();
 
         scoreText.text = score.ToString("D7");
 
@@ -53,8 +54,5 @@ public class UIScript : MonoBehaviour
         if (((float) health) / ((float) maxhealth) <= badHealthValue) {
             sliderFillArea.color = badHealthColor;
         } else sliderFillArea.color = goodHealthColor;
-         
-
-
     }
 }

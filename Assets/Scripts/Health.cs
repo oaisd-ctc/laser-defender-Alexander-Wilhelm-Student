@@ -57,15 +57,20 @@ public class Health : MonoBehaviour
     {
         if (deathEffect != null) Instantiate(deathEffect, transform.position, Quaternion.identity);
         if (deathSound != null) audioPlayer.PlayClip(deathSound, deathVolume);
+        if (player) {
+            Debug.Log("cringe!");
+            FindObjectOfType<LevelManager>().DelayLoadGameOver(); //LOTSA SPAGHETTI!!!!
+            FindObjectOfType<GameManager>().FadePanel();
+            FindObjectOfType<GameManager>().ImpostorFadeMusic();
+        };
         shake.setShake(deathShakeAmount, ShakeDecay);
-        FindObjectOfType<GameManager>().score += scoreValue;
+        FindObjectOfType<ScoreKeeper>().AddScore(scoreValue);
         Destroy(gameObject);
     }
 
     void TakeDamage(int damage)
     {
-        if (!player || FindObjectOfType<GameManager>().stagePlaying)
-        health -= damage;
+        if (!player || FindObjectOfType<GameManager>().stagePlaying) health -= damage; // don't take damage if all the enemies are dead!
         flashTimer = flashLength;
         if (hitSound != null) audioPlayer.PlayClip(hitSound, hitVolume);
         shake.setShake(hitShakeAmount, ShakeDecay);
@@ -77,6 +82,10 @@ public class Health : MonoBehaviour
 
     public int GetHealth() {
         return health;
+    }
+
+    public void SetHealth(int x) {
+        health = x;
     }
 
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; //lotsa spaghetti!
 using TMPro; //no im not making a separate script for stage ui lol
 
 public class GameManager : MonoBehaviour
@@ -14,7 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] float stageEndDelay;
     [SerializeField] float fadeHold;
     [SerializeField] float fadeSpeed;
-
+    [SerializeField] float gameOverFadeSpeed;
+    [SerializeField] Image img;
+ 
     [SerializeField] TextMeshProUGUI stageStartText;
     [SerializeField] TextMeshProUGUI stageEndText;
 
@@ -22,10 +25,11 @@ public class GameManager : MonoBehaviour
 
     GameObject music;
     GameObject player;
+    int maxhealth;
     AudioSource musicSrc;
     float defaultMusicVol;
 
-    public int score;
+  
 
     public bool stagePlaying;
 
@@ -34,6 +38,7 @@ public class GameManager : MonoBehaviour
     {
         enemySpawner = FindObjectOfType<EnemySpawner>();
         player = FindObjectOfType<Player>().gameObject;
+        maxhealth = player.GetComponent<Health>().GetHealth();
         music = FindObjectOfType<MusicLoop>().gameObject;
         musicSrc = music.GetComponent<AudioSource>();
         defaultMusicVol = musicSrc.volume;
@@ -46,8 +51,9 @@ public class GameManager : MonoBehaviour
         foreach (StageSO stage in stageList)
         {
             stageStartText.text = stage.GetStageName();
-            yield return new WaitForSeconds(stageStartDelay);
             StartCoroutine(FadeText(stageStartText, fadeSpeed));
+            player.GetComponent<Health>().SetHealth(maxhealth);
+            yield return new WaitForSeconds(stageStartDelay);
             NextStage(stage);
             stagePlaying = true;
             do { yield return null; }
@@ -59,7 +65,9 @@ public class GameManager : MonoBehaviour
             
         }
 
-        
+            yield return new WaitForSeconds(stageEndDelay);
+            FadePanel();
+            FindObjectOfType<LevelManager>().DelayLoadGameOver();
 
     }
 
@@ -75,6 +83,9 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void ImpostorFadeMusic() { //lmfao
+        StartCoroutine(FadeMusic()); 
+    }
     public IEnumerator FadeMusic()
     {
         while (musicSrc.volume >= Mathf.Epsilon)
@@ -93,6 +104,18 @@ public class GameManager : MonoBehaviour
         while (text.color.a >= Mathf.Epsilon)
         {
             text.color = new Color(text.color.r, text.color.g, text.color.b, (text.color.a - (fadeFactor*Time.deltaTime))); //INSANE!!!! WHY AM I DOING THIS
+            yield return null;
+        }
+        
+    }
+
+    public void FadePanel() {
+        StartCoroutine(RealFadePanel());
+    }
+    IEnumerator RealFadePanel() {
+        Debug.Log("ULTRACRINGE!!!");
+        while(true) {
+            img.color += new Color(0,0,0, gameOverFadeSpeed*Time.deltaTime);
             yield return null;
         }
         
