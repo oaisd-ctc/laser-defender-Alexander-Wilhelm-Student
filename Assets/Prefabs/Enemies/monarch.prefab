@@ -169,7 +169,7 @@ MonoBehaviour:
   shootCount: 1
   burstCount: 5
   burstRate: 0.05
-  burstDelay: 2
+  burstDelay: 1.2
 --- !u!114 &-8120601013705679754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   shootCount: 1
   burstCount: 5
   burstRate: 0.05
-  burstDelay: 2
+  burstDelay: 1.2
 --- !u!114 &-2119013242209194027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eb90d6c9417e00b4ab079513e4db4ae7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5c7986cf6a09c5841b3f5c6286eee9a7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -266,7 +266,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 3
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

@@ -42,7 +42,7 @@ public class UIScript : MonoBehaviour
     {
         score = scoreKeeper.GetScore();
 
-        scoreText.text = score.ToString("D7");
+        scoreText.text = score.ToString("D6");
 
         if (player != null) health = player.GetComponent<Health>().GetHealth();
         else health = 0;

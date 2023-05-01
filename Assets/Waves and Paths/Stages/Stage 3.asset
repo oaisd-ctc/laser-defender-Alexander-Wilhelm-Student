@@ -12,5 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93aba325c28d20d42a2d80f9286221c2, type: 3}
   m_Name: Stage 3
   m_EditorClassIdentifier: 
-  stageName: 
-  waves: []
+  stageName: FINAL STAGE
+  waves:
+  - {fileID: 11400000, guid: 6fd3938cb00079a419620fde2de443e8, type: 2}
+  - {fileID: 11400000, guid: 8e5cd5b3cb2af0043a8d316e32467f69, type: 2}
+  - {fileID: 11400000, guid: 040b542196075114495b8a68ddce5369, type: 2}
+  - {fileID: 11400000, guid: 5df41195e3db9b94f9d4e30f5d819d5c, type: 2}
+  - {fileID: 11400000, guid: 00f79d1d3b0fe3847ad275fd8ffb5bbb, type: 2}
+  - {fileID: 11400000, guid: 988c4e661267fe14aa6864fd30912dce, type: 2}
+  - {fileID: 11400000, guid: eb172807e142d3046946323d3a479f39, type: 2}
+  - {fileID: 11400000, guid: 803dbc1af780b45449916e988a397b54, type: 2}
+  - {fileID: 11400000, guid: c2895baaa9ca8bc4ca2e918d09452c2a, type: 2}
+  - {fileID: 11400000, guid: 796a76e425973d0479a237cadf1b478a, type: 2}
+  - {fileID: 11400000, guid: 947d97d51b538fe479695f8f5b2d35d8, type: 2}
+  - {fileID: 11400000, guid: 76c759ec6ac078e43a3a9b8e2ca27880, type: 2}
+  - {fileID: 11400000, guid: b46d5dc34e0e9684fb4ca121dfd9b0ce, type: 2}
+  - {fileID: 11400000, guid: ee52819d2fe52ba48ae831c69d6d4206, type: 2}
+  - {fileID: 11400000, guid: 6e714a3d0a74ab4408e07870983073ba, type: 2}
+  - {fileID: 11400000, guid: 218ee6843c820d749881ddadcbfbfd9b, type: 2}
+  introMusic: {fileID: 8300000, guid: dc9f28223e003104790ebea5437e71c3, type: 3}
+  loopMusic: {fileID: 8300000, guid: d4dd7ceba6f522e4cb773053a624031c, type: 3}

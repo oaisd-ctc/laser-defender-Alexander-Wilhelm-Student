@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    
     ScoreKeeper scoreKeeper;
     void Awake()
     {
@@ -16,7 +15,7 @@ public class LevelManager : MonoBehaviour
 
 
     public void LoadGame() {
-        scoreKeeper.ResetScore();
+        if (scoreKeeper != null) scoreKeeper.ResetScore();
         SceneManager.LoadScene("swag");
     }
 
@@ -43,6 +42,4 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("gameover");
     }
-
-
 }

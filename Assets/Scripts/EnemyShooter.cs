@@ -14,11 +14,13 @@ public class EnemyShooter : MonoBehaviour
     [SerializeField] float shootVolume = 1;
 
     [SerializeField] GameObject projectilePrefab;
+    [SerializeField] float initialDelay;
     [SerializeField] float fireRate;
     [SerializeField] float fireRateVariance;
     [SerializeField] Vector3 offset;
 
     [SerializeField] bool aimAtPlayer;
+    [SerializeField] bool flip = true;
     [SerializeField] float randomSpread = 0;
     [SerializeField] int shootCount = 1;
     [SerializeField] int burstCount = 1;
@@ -39,6 +41,7 @@ public class EnemyShooter : MonoBehaviour
 
     IEnumerator FireStuff()
     {
+        yield return new WaitForSeconds(initialDelay);
         while (true)
         {
             for (int i = 0; i < burstCount; i++)
@@ -52,17 +55,20 @@ public class EnemyShooter : MonoBehaviour
                         if (aimAtPlayer)
                         {
                             //rot = -Vector2.Angle(transform.position, player.transform.position) ; //todo : get player angle
-
                             Vector3 dir = player.transform.position - transform.position;
                             dir = player.transform.InverseTransformDirection(dir);
                             rot = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
                             //Debug.Log(rot);
                         }
-                        else rot = transform.rotation.eulerAngles.z + 180;
+                        else
+                        {
+                            rot = transform.rotation.eulerAngles.z;
+                            if (flip) rot += 180;
+                        }
                         rot += Random.Range(-randomSpread, randomSpread);
 
                         Quaternion finalAngle = Quaternion.Euler(0, 0, rot);
-
+                        Debug.Log(projectilePrefab.name);
                         Instantiate(projectilePrefab, transform.position + offset, finalAngle);
                     }
                     audioPlayer.PlayClip(shootSound, shootVolume);

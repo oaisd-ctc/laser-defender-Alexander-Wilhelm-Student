@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
             NextStage(stage);
             stagePlaying = true;
             do { yield return null; }
-            while (enemySpawner.spawningEnemies || GameObject.FindGameObjectsWithTag("Enemy").Length > 0);
+            while ((enemySpawner.spawningEnemies || GameObject.FindGameObjectsWithTag("Enemy").Length > 0 || player == null)); //if player is dead, don't advance game state
             stagePlaying = false;
             StartCoroutine(FadeText(stageEndText, fadeSpeed/3));
             StartCoroutine(FadeMusic());

@@ -304,7 +304,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &167961525
 MonoBehaviour:
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoopMusic: {fileID: 0}
-  looping: 0
+  looping: 1
 --- !u!82 &522084718
 AudioSource:
   m_ObjectHideFlags: 0
@@ -654,7 +654,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1144,7 +1144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5362185124500625649, guid: d5159bd9786fc7e45b16950e9ddae06f, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5362185124500625649, guid: d5159bd9786fc7e45b16950e9ddae06f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1220,7 +1220,8 @@ MonoBehaviour:
   stageList:
   - {fileID: 11400000, guid: afca751557f95744b91feff22b602261, type: 2}
   - {fileID: 11400000, guid: 9fdb748506363f54da54c24ca9fd913c, type: 2}
-  musicFadeFactor: 0.5
+  - {fileID: 11400000, guid: 6c7a3e0fb65cbe343a99767cc58d7246, type: 2}
+  musicFadeFactor: 0.3
   stageStartDelay: 0.5
   stageEndDelay: 3
   fadeHold: 2
@@ -1229,7 +1230,6 @@ MonoBehaviour:
   img: {fileID: 1157378844}
   stageStartText: {fileID: 1253200425}
   stageEndText: {fileID: 507825364}
-  score: 0
   stagePlaying: 0
 --- !u!4 &1021521814
 Transform:
@@ -1244,7 +1244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1106042557
 GameObject:
@@ -2322,7 +2322,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0000000
+  m_text: 000000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bc663b45255338429855ca944f76629, type: 2}
   m_sharedMaterial: {fileID: 4539974134908476093, guid: 2bc663b45255338429855ca944f76629, type: 2}
@@ -2443,18 +2443,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4598835021489422914, guid: c955b2b30d4508f42bc4e162f8867be1, type: 3}
-      propertyPath: player
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598835021489422914, guid: c955b2b30d4508f42bc4e162f8867be1, type: 3}
-      propertyPath: ShakeDecay
-      value: 0.015
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598835021489422914, guid: c955b2b30d4508f42bc4e162f8867be1, type: 3}
-      propertyPath: deathShakeAmount
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 9206049328932274979, guid: c955b2b30d4508f42bc4e162f8867be1, type: 3}
       propertyPath: m_Name
       value: timmy

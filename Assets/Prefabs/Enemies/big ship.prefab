@@ -133,9 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d73ca2253af1bb4db27790749f68958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 750
+  health: 1000
   player: 0
-  scoreValue: 2500
+  scoreValue: 5000
   flashLength: 0.025
   deathEffect: {fileID: 6557589332280452197, guid: dc1555244f90ffc45ae558a7b6d92899, type: 3}
   hitSound: {fileID: 8300000, guid: 863453828cf6ec54499c5242a30ac0e5, type: 3}
@@ -186,7 +186,7 @@ MonoBehaviour:
   alwaysShoot: 1
   shootTrigger: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 43453efa48cbc8b49bd19407246640a2, type: 3}
-  shootVolume: 1
+  shootVolume: 0.8
   projectilePrefab: {fileID: 5663616549154556513, guid: 14c28babf6a6ccd4c999cbfe64d2004e, type: 3}
   fireRate: 0.45
   fireRateVariance: 0.3

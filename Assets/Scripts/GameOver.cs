@@ -9,6 +9,6 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoretext.text = FindObjectOfType<ScoreKeeper>().GetScore().ToString("D7");
+        scoretext.text = FindObjectOfType<ScoreKeeper>().GetScore().ToString("D6");
     }
 }

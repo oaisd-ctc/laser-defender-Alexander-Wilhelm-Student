@@ -14,6 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageName: Stage 2
   waves:
+  - {fileID: 11400000, guid: 565e9d95de10f584eb2a50315c821d4d, type: 2}
+  - {fileID: 11400000, guid: ed5b8603b3935694f8adcd59c2345e3a, type: 2}
+  - {fileID: 11400000, guid: f73bde2c06d461b4aa73ebae3b255929, type: 2}
+  - {fileID: 11400000, guid: eff5c8dd0669dd545a54bc55356a41f6, type: 2}
+  - {fileID: 11400000, guid: 947d97d51b538fe479695f8f5b2d35d8, type: 2}
+  - {fileID: 11400000, guid: 333b045b2821c97438f5623bb978fb0c, type: 2}
+  - {fileID: 11400000, guid: ed5b8603b3935694f8adcd59c2345e3a, type: 2}
+  - {fileID: 11400000, guid: 6fd3938cb00079a419620fde2de443e8, type: 2}
+  - {fileID: 11400000, guid: 796a76e425973d0479a237cadf1b478a, type: 2}
+  - {fileID: 11400000, guid: 040b542196075114495b8a68ddce5369, type: 2}
+  - {fileID: 11400000, guid: a8f0a14a92e316a48be5b6ebbac7d408, type: 2}
+  - {fileID: 11400000, guid: 93056ac8dfc1d60408363731fed6e74d, type: 2}
+  - {fileID: 11400000, guid: d2786691a0bfd4f42bb97c88e80c1a3d, type: 2}
+  - {fileID: 11400000, guid: 8f0c11d0feba3d44abab6af95a5b7e43, type: 2}
+  - {fileID: 11400000, guid: df12bc8eb2c53a444a65ee8ea21ac6de, type: 2}
+  - {fileID: 11400000, guid: 102d095f6c5e886499543be03a28a9c0, type: 2}
+  - {fileID: 11400000, guid: ed618bb4a61d402429a5990a7c77af97, type: 2}
+  - {fileID: 11400000, guid: ed5b8603b3935694f8adcd59c2345e3a, type: 2}
+  - {fileID: 11400000, guid: eff5c8dd0669dd545a54bc55356a41f6, type: 2}
+  - {fileID: 11400000, guid: 391a13a201268864e9752f58f9717fdf, type: 2}
+  - {fileID: 11400000, guid: 040b542196075114495b8a68ddce5369, type: 2}
+  - {fileID: 11400000, guid: a8f0a14a92e316a48be5b6ebbac7d408, type: 2}
   - {fileID: 11400000, guid: af39478272661cf42a1460619f7e8351, type: 2}
-  introMusic: {fileID: 8300000, guid: 9b308b28f36ec71428b7e6edeea4fa59, type: 3}
-  loopMusic: {fileID: 8300000, guid: 46942ca1b61be6a4087a3658a24bdc6e, type: 3}
+  introMusic: {fileID: 8300000, guid: 1fa8542aae396904e8a453438919ff69, type: 3}
+  loopMusic: {fileID: 8300000, guid: ea896e822e6e9a243a3e051ee5c27fcd, type: 3}
